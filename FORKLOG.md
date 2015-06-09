@@ -1,0 +1,8 @@
+- Source non-public keys, machine-specific config etc in ~/.localrc
+- Enable preferred modules
+- Edit w sublime
+- Set formatting defaults
+- Add sbin paths
+- z
+- grc, etc colorization
+- some of my old aliases
