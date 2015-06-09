@@ -13,6 +13,20 @@ fi
 
 # Customize to your needs...
 
+# Disable autocorrect guesses. Happens when typing a wrong
+# command that may look like an existing one.
+unsetopt CORRECT
+
+# This bunch of code displays red dots when autocompleting
+# a command with the tab key, "Oh-my-zsh"-style.
+expand-or-complete-with-dots() {
+  echo -n "\e[31m......\e[0m"
+  zle expand-or-complete
+  zle redisplay
+}
+zle -N expand-or-complete-with-dots
+bindkey "^I" expand-or-complete-with-dots
+
 # z
 . `brew --prefix`/etc/profile.d/z.sh
 
