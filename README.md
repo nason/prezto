@@ -42,7 +42,15 @@ window or tab.
 Updating
 --------
 
-Pull the latest changes and update submodules.
+**Pull the latest upstream changes into this fork**
+
+    git fetch upstream && git pull upstream/master
+
+-One day, you may run into conflicts doing this.
+-Make sure your changes aren't overwritten after this
+-Be sure to push back to `origin` after doing this
+
+**Pull the latest changes and update submodules.**
 
     git pull && git submodule update --init --recursive
 
