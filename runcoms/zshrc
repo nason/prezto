@@ -38,6 +38,7 @@ bindkey "^I" expand-or-complete-with-dots
 # GRC colorizes nifty unix tools all over the place
 if (( $+commands[grc] )) && (( $+commands[brew] ))
 then
+  unalias grc
   source `brew --prefix`/etc/grc.bashrc
 fi
 # grc overides for ls
