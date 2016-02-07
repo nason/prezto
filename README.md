@@ -8,6 +8,17 @@ and prompt themes.
 Installation
 ------------
 
+On OS X install some basics with brew:
+
+```
+brew install git
+brew install zsh
+brew install z
+brew install grc
+brew install coreutils
+```
+
+
 Prezto will work with any recent release of Zsh, but the minimum required
 version is 4.3.17.
 
@@ -17,7 +28,7 @@ version is 4.3.17.
 
   2. Clone the repository:
 
-        git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+        git clone --recursive https://github.com/nason/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
   3. Create a new Zsh configuration by copying the Zsh configuration files
      provided:
