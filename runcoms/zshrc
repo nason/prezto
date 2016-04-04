@@ -79,6 +79,14 @@ alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gst='gs'
 
+# Misc
+alias myip='curl ip.appspot.com'
+alias emojis="open http://www.emoji-cheat-sheet.com/"
+# kills all processes running on the specified port (e.g. 'killport 8080')
+killport() {
+  lsof -i tcp:$1 | awk '(NR!=1) && ($1!="Google") && ($1!="firefox") {print $2}' | xargs kill
+}
+
 #ZSH
 alias reload!='. ~/.zshrc'
 alias zshconfig="subl ~/.zprezto"
