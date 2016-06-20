@@ -87,7 +87,25 @@ killport() {
   lsof -i tcp:$1 | awk '(NR!=1) && ($1!="Google") && ($1!="firefox") {print $2}' | xargs kill
 }
 
-#ZSH
+# ZSH
 alias reload!='. ~/.zshrc'
 alias zshconfig="subl ~/.zprezto"
 alias dotfiles="subl ~/.dotfiles"
+
+# NVM
+export NVM_DIR="/Users/mnason/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# Load rbenv automatically
+eval "$(rbenv init -)"
