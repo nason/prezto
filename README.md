@@ -13,7 +13,6 @@ On OS X install some basics with brew:
 ```
 brew install git
 brew install zsh
-brew install z
 brew install grc
 brew install coreutils
 ```
